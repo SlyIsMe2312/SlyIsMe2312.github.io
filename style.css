@@ -4,31 +4,124 @@
 
 body {
     background-color: #f8f9fa;
+    width: 100%;
 }
 
-/* Custom Styles */
-.hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 100px 0;
+html, body {
+    overflow: auto !important;
+    scrollbar-width: none !important; 
+    -ms-overflow-style: none !important; 
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    background: transparent !important;
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    background: transparent;
+}
+
+h1 {
+    font-size: calc(1rem + 1.5vw);
+}
+
+p {
+    font-size: calc(0.8rem + 0.5vw);
+}
+
+@media (max-width: 576px) {
+    .px-sm-2 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: auto; 
+    }
+}
+
+@media (min-width: 992px) {
+    .w-lg-50 { 
+        width: 50% !important; 
+    }
+}
+
+.about-section {
+    background-color: #f8f9fa;
+    padding: 100px 0 20px 0;
+    overflow: hidden; 
+    color: black;
     margin-top: 56px; 
+    max-width: 816.9px;
+    margin: auto;
+    text-align: left;
+}
+
+.m-top {
+    margin-top: 56px;
+}
+
+.float-image {
+    float: right;
+    width: 33.333%; 
+    max-width: 300px; 
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.float-image img {
+    width: 100%;
+    height: auto;
+}
+
+.about-section .container-fluid::after {
+    content: "";
+    display: table;
+    clear: both;
+    
+}
+
+.container-fluid {
+    max-width: 816.9px;
+}
+
+.container-fluid-nav {
+    max-width: 921.6px !important;
+}
+
+@media (max-width: 576px) {
+    .float-image {
+        width: 30%; 
+        max-width: 250px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .about-section {
+        margin-top: 56px; 
+    }
 }
 
 .section-title {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: 600;
     color: #333;
-}
-
-.section-title:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
 }
 
 .skill-badge {
@@ -121,11 +214,163 @@ footer {
     font-size: 20px;
     transition: all 0.3s ease;
 }
+.about-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
 
-.social-links a:hover {
-    color: #667eea;
-    transform: translateY(-3px);
+.about-links a {
+    color: rgb(47, 96, 106);
+    font-size: 20px;
+    padding: 6px 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
     display: inline-block;
+    position: relative;
+}
+
+.resume-link {
+    text-decoration: none;
+}
+
+.link:hover {
+    background: #333;
+    color: white;
+}
+
+.resume-link:hover {
+    background: #333;
+    color: white;
+}
+
+.about-links a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+    font-weight: normal;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Tooltip arrow */
+.about-links a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-right-color: #2c3e50;
+    margin-left: -1px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Show tooltip on hover */
+.about-links a:hover::after,
+.about-links a:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optional: Different colors for each link */
+.about-links a[data-tooltip="Download my Resume"]:hover::after {
+    background: #007bff;
+}
+.about-links a[data-tooltip="Download my Resume"]:hover::before {
+    border-right-color: #007bff;
+}
+
+.about-links a[data-tooltip="Visit my GitHub"]:hover::after {
+    background: #333;
+}
+.about-links a[data-tooltip="Visit my GitHub"]:hover::before {
+    border-right-color: #333;
+}
+
+.about-links a[data-tooltip="Connect to my LinkedIn"]:hover::after {
+    background: #0077b5;
+}
+.about-links a[data-tooltip="Connect to my LinkedIn"]:hover::before {
+    border-right-color: #0077b5;
+}
+
+.about-links a[data-tooltip="Send me an email"]:hover::after {
+    background: #ea4335;
+}
+.about-links a[data-tooltip="Send me an email"]:hover::before {
+    border-right-color: #ea4335;
+}
+
+/* Mobile responsive - tooltips appear above the links */
+@media (max-width: 768px) {
+    .about-links a::after,
+    .about-links a::before {
+        display: none !important;
+        content: none !important;
+    }
+}
+
+.link-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip styling - disappears after delay */
+.about-links a::after,
+.about-links a::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transition-delay: 0s;
+}
+
+/* Show tooltip on hover */
+.about-links a:hover::after,
+.about-links a:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* Hide tooltip automatically after 1 second */
+.about-links a:not(:hover)::after,
+.about-links a:not(:hover)::before {
+    transition-delay: 0.8s; 
+}
+
+.copy-btn {
+    margin: 5px 0;
+    padding: 5px 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #0056b3;
+    transform: scale(1.02);
 }
 
 .btn-custom {
@@ -137,24 +382,56 @@ footer {
     transition: all 0.3s ease;
 }
 
-.btn-custom:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-    color: white;
+/* --- Light Mode Tab Styling --- */
+.custom-tabs {
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
 
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 60px 0;
-        text-align: center;
-    }
-    
-    .section-title:after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .section-title {
-        text-align: center;
-    }
+.tab-link {
+    color: #6c757d;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    text-align: center;
+}
+
+.tab-link:hover {
+    color: #000;
+}
+
+.tab-link.active {
+    color: #007bff; /* Primary Blue */
+    border-bottom: 3px solid #007bff;
+}
+
+/* --- Rounded Image / Logo Container --- */
+.org-logo-container {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+.org-logo-container img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Visibility Utility --- */
+.hidden {
+    display: none !important;
 }

@@ -45,3 +45,28 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+function copyEmail(email) {
+    navigator.clipboard.writeText(email).then(() => {
+        alert(`Copied: ${email}`);
+    }).catch(() => {
+        alert('Failed to copy email');
+    });
+}
+
+function switchTab(tabName, element) {
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('d-none');
+    });
+
+    document.querySelectorAll('.tab-link').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    let tabContent = document.getElementById(tabName + '-content');
+    if (tabContent) {
+        tabContent.classList.remove('d-none');
+        console.log(`Switched to ${tabName} tab`);
+    }
+    element.classList.add('active');
+}

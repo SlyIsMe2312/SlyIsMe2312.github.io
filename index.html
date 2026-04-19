@@ -4,189 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of John Patrick C. Palanas - Computer Science Student specializing in App Development">
-    <title>John Patrick Palanas | Portfolio</title>
-    
+    <title>Palanas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#about">SlyIsMe</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            </ul>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="container-fluid container-fluid-nav d-flex flex-column flex-lg-row align-items-lg-center">
+        
+        <div class="d-flex justify-content-between align-items-center w-lg-50 w-100 ">
+            <a class="navbar-brand" href="#about">SlyIsMe</a>
+            
+            <div class="d-flex d-lg-none align-items-center text-light">
+                <i class="bi bi-eye-slash me-3"></i>
+                <i class="bi bi-brightness-high"></i>
+            </div>
         </div>
+
+        <div class="d-flex justify-content-lg-end align-items-center w-lg-50 w-100">
+            <ul class="navbar-nav flex-row mt-2 mt-lg-0 me-auto me-lg-0">
+                <li class="nav-item me-3"><a class="nav-link px-0" href="#about">About</a></li>
+                <li class="nav-item me-3"><a class="nav-link px-0" href="#skills">Skills</a></li>
+                <li class="nav-item me-3"><a class="nav-link px-0" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="#projects">Projects</a></li>
+            </ul>
+
+            <div class="d-none d-lg-flex align-items-center text-light ms-3">
+                <i class="bi bi-eye-slash me-3"></i>
+                <i class="bi bi-brightness-high"></i>
+            </div>
+        </div>
+        
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section id="about" class="hero-section">
-    <div class="container-fluid px-5">
-        <div class="row g-0 align-items-center">
-            <div class="col-lg-8 mb-4">
-                <h1 class="display-5 fw-bold">John Patrick C. Palanas</h1>
-                <p class="lead mb-4">Computer Science Student | Aspiring Full Stack Developer and Mobile Developer</p>
-                <p>I'm a student specializing in App Development at Mapua University Makati Campus, expected to graduate in October 2026.</p>
-                <p>I'm dedicated to creating innovative solutions through full-stack web and mobile development. With hands-on experience in modern technologies and frameworks, I strive to build applications that make a difference.</p>  
-                <div class="row g-0">
-                    <div class="col-lg-6">
-                        <h4 class="mt-4">Areas of Interest:</h4>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check-circle text-primary me-2"></i> Information Technology</li>
-                            <li><i class="fas fa-check-circle text-primary me-2"></i> Full Stack Web Development</li>
-                            <li><i class="fas fa-check-circle text-primary me-2"></i> Mobile Development</li>
-                            <li><i class="fas fa-check-circle text-primary me-2"></i> Software Engineering</li>
+<section id="about" class="about-section m-top">
+    <div class="container-fluid px-sm-2 px-5">
+        <div class="float-image">
+            <img src="profile.jpg" 
+                 alt="Profile Picture" 
+                 class="img-fluid shadow rounded">
+        </div>
+        
+        <h1 class="display-8 fw-bold">John Patrick C. Palanas</h1>
+        <p class="mb-4">Computer Science Student, Aspiring Full Stack Developer and Mobile Developer based in the Philippines</p>
+        <p>I'm a student specializing in App Development at Mapua University Makati Campus, expected to graduate in October 2026.</p>
+        <p>I'm dedicated to creating innovative solutions through full stack web and mobile development. With hands-on experience in modern technologies and frameworks, I strive to build applications that make a difference.</p>  
+        
+        <div class="about-links mb-3">
+            <div class="link-wrapper">
+                <a href="/resume.docx" target="_blank" class="resume-link" data-tooltip="Download my Resume">
+                    Resume <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                </a>
+            </div>
+            <div class="link-wrapper">
+                <a class="link" href="https://github.com/slyisme2312" target="_blank" data-tooltip="Visit my GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <span class="tooltip-text"></span>
+            </div>
+            <div class="link-wrapper">
+                <a class="link" href="#" target="_blank" data-tooltip="Connect to my LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <span class="tooltip-text"></span>
+            </div>
+            <div class="link-wrapper email-container">
+                <a class="link email-link" href="#" data-bs-toggle="collapse" data-bs-target="#emailCollapse" aria-expanded="false" aria-controls="emailCollapse" data-tooltip="Send me an email">
+                    <i class="bi bi-envelope-at-fill"></i>
+                </a>
+                <span class="tooltip-text"></span>
+            </div>
+        </div>
+        <div class="collapse mt-3" id="emailCollapse">
+            <div class="email-item">
+                <span class="email-label">Personal email:</span>
+                <span class="email-address">patrickpalanas0@gmail.com</span>
+                <button class="copy-btn" onclick="copyEmail('patrickpalanas0@gmail.com')">
+                    <i class="bi bi-clipboard2-fill"></i>
+                </button>
+            </div>
+            
+            <div class="email-item">
+                <span class="email-label">School email:</span>
+                <span class="email-address">jpcpalanas@mymail.mapua.edu.ph</span>
+                <button class="copy-btn" onclick="copyEmail('jpcpalanas@mymail.mapua.edu.ph')">
+                    <i class="bi bi-clipboard2-fill"></i>
+                </button>
+            </div>
+        </div>
+       
+    </div>
+</section>
+
+<hr style="border: 2px solid #333; border-radius: 5px; max-width: 816.9px; width: calc(100% - 32px); margin: auto;">
+
+<!-- Skills | Experience | Education Section -->
+<section class="py-5 bg-light">
+    <div class="container-fluid">
+        
+        <nav class="custom-tabs justify-content-between">
+            <div class="tab-link" onclick="switchTab('skills', this)">Skills</div>
+            <div class="tab-link active" onclick="switchTab('experience', this)">Experience</div>
+            <div class="tab-link" onclick="switchTab('education', this)">Education</div>
+        </nav>
+
+        <div id="tab-contents">
+
+            <div id="skills-content" class="tab-content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="mb-3 text-muted fw-bold small text-uppercase">Programming</h6>
+                        <div class="mb-4">
+                            <span class="skill-badge"><i class="fab fa-js text-warning"></i> JavaScript</span>
+                            <span class="skill-badge"><i class="fab fa-php text-info"></i> PHP</span>
+                            <span class="skill-badge"><i class="fab fa-python text-primary"></i> Python</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="mb-3 text-muted fw-bold small text-uppercase">Tools & Databases</h6>
+                        <div class="mb-4">
+                            <span class="skill-badge"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="experience-content" class="tab-content">
+                <div class="d-flex gap-3 mb-4">
+                    <div class="org-logo-container">
+                        <i class="fas fa-laptop-code text-muted"></i>
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold">Freelance Web Developer</h5>
+                            <span class="text-muted small">Jan 2026 — Present</span>
+                        </div>
+                        <p class="text-primary small mb-2">Self-Employed</p>
+                        <ul class="small text-muted ps-3">
+                            <li>Developed front-end for Domora Website using Bootstrap and JS.</li>
+                            <li>Implemented back-end functionality using PHP and MySQL.</li>
                         </ul>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="card border-0 shadow">
-                            <div class="card-body">
-                                <h5><i class="fas fa-graduation-cap text-primary me-2"></i> Education</h5>
-                                <p class="mb-0"><strong>Mapua University Makati Campus</strong></p>
-                                <p>BS Computer Science with Specialization in App Development</p>
-                                <p class="text-muted">Expected Graduation: August 2026</p>
-                            </div>
+                </div>
+            </div>
+
+            <div id="education-content" class="tab-content">
+                <div class="d-flex gap-3 mb-4">
+                    <div class="org-logo-container">
+                        <img src="path_to_mapua_logo.png" alt="Mapua">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-0 fw-bold">Mapua University Makati</h5>
+                            <span class="text-muted small">Expected 2026</span>
                         </div>
+                        <p class="text-muted small">BS Computer Science (App Development)</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <div class="org-logo-container">
+                        <img src="path_to_sti_logo.png" alt="STI">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="mb-0 fw-bold">STI Pasay Edsa</h5>
+                            <span class="text-muted small">2019 — 2021</span>
+                        </div>
+                        <p class="text-muted small">Senior High School - STEM</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                    <div class="container">
-                        <h4 class="">Contact Information</h4>
-                        <div class="row g-0">
-                            <div class="col-12">
-                                <div class="contact-info">
-                                    <div class="contact-header">
-                                        <i class="fas fa-map-marker-alt contact-icon"></i>
-                                        <h5>Location</h5>
-                                    </div>
-                                    <p>Mapua University Makati Campus, Philippines</p>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="contact-info">
-                                    <div class="contact-header">
-                                        <i class="fas fa-phone contact-icon"></i>
-                                        <h5>Mobile</h5>
-                                    </div>
-                                    <p>09661837881</p>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="contact-info">
-                                    <div class="contact-header">
-                                        <i class="fas fa-envelope contact-icon"></i>
-                                        <h5>Email</h5>
-                                    </div>
-                                    <p>jpcpalanas@mymail.mapua.edu.ph (school email)</p>
-                                    <p>patrickpalanas0@gmail.com (personal email)</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="text-center mt-4">
-                            <a href="mailto:jpcpalanas@mymail.mapua.edu.ph" class="btn btn-custom btn-lg">
-                                <i class="fas fa-envelope me-2"></i>Send Message
-                            </a>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        
-    </div>
-</section>
 
-
-
-<!-- Skills Section -->
-<section id="skills" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="row g-0">
-            <div class="col-lg-6">
-                <h6 class="mb-3">Programming Languages</h6>
-                <div class="mb-4">
-                    <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
-                    <span class="skill-badge"><i class="fab fa-php"></i> PHP</span>
-                    <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
-                    <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
-                </div>
-                
-                <h6 class="mb-3">Markup & Styling</h6>
-                <div class="mb-4">
-                    <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
-                    <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
-                </div>
-                <h6 class="mb-3">Frameworks & Libraries</h6>
-                <div class="mb-4">
-                    <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                    <span class="skill-badge"><i class="fas fa-chart-line"></i> Chart.js</span>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                
-                <h6 class="mb-3">Databases</h6>
-                <div class="mb-4">
-                    <span class="skill-badge"><i class="fas fa-database"></i> MySQL</span>
-                </div>
-                
-                <h6 class="mb-3">Tools & Platforms</h6>
-                <div class="mb-4">
-                    <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
-                    <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
-                </div>
-            </div>
-        </div>
-
-        
-
-    </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="py-5">
-    <div class="container">
-        <h2 class="section-title">Work Experience</h2>
-        
-        <div class="card project-card mb-4">
-            <div class="card-body">
-                <h3 class="card-title">Freelance Web Developer</h3>
-                <h5 class="text-muted mb-3">Self-Employed</h5>
-                
-                <h4 class="mt-3">Completed Project: Domora Website</h4>
-                <p><strong>Date:</strong> January 21, 2026</p>
-                <p><strong>Live Demo:</strong> <a href="https://domora-unoj.onrender.com/" target="_blank">https://domora-unoj.onrender.com/</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/slyisme2312/domora" target="_blank">https://github.com/slyisme2312/domora</a></p>
-                
-                <h5>Key Contributions:</h5>
-                <ul>
-                    <li>Collaborated with 1 other developer to build a fully functional website</li>
-                    <li>Developed front-end using HTML, CSS, JavaScript, and Bootstrap using client's initial mock-up design</li>
-                    <li>Implemented back-end functionality using PHP and MySQL</li>
-                    <li>Integrated Chart.js for data visualization components</li>
-                    <li>Project delivered on time meeting all client requirements</li>
-                </ul>
-            </div>
         </div>
     </div>
 </section>
 
-<!-- Projects Section -->
+<hr style="border: 2px solid #333; border-radius: 5px; max-width: 816.9px; width: calc(100% - 32px); margin: auto;">
+
 <section id="projects" class="py-5 bg-light">
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="section-title">Featured Projects</h2>
         
         <div class="row g-0 g-4">
@@ -208,7 +210,7 @@
                 </div>
             </div>
             
-            <!-- Add more projects here as you complete them -->
+
             <div class="col-md-6 col-lg-4">
                 <div class="card project-card h-100">
                     <div class="card-body">
@@ -224,19 +226,16 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-
 
 <!-- Footer -->
 <footer>
-    <div class="container text-center">
+    <div class="container-fluid text-center">
         <div class="social-links mb-3">
             <a href="https://github.com/slyisme2312" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-        <p>&copy; 2024 John Patrick C. Palanas. All rights reserved.</p>
-        <p class="small">Built with <i class="fas fa-heart text-danger"></i> using HTML, CSS, and Bootstrap</p>
+        <p>&copy; 2026 John Patrick C. Palanas.</p>
     </div>
 </footer>
 
@@ -244,3 +243,24 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+<!-- <div class="card project-card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Freelance Web Developer</h3>
+                <h5 class="text-muted mb-3">Self-Employed</h5>
+                
+                <h4 class="mt-3">Completed Project: Domora Website</h4>
+                <p><strong>Date:</strong> January 21, 2026</p>
+                <p><strong>Live Demo:</strong> <a href="https://domora-unoj.onrender.com/" target="_blank">https://domora-unoj.onrender.com/</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/slyisme2312/domora" target="_blank">https://github.com/slyisme2312/domora</a></p>
+                
+                <h5>Key Contributions:</h5>
+                <ul>
+                    <li>Collaborated with 1 other developer to build a fully functional website</li>
+                    <li>Developed front-end using HTML, CSS, JavaScript, and Bootstrap using client's initial mock-up design</li>
+                    <li>Implemented back-end functionality using PHP and MySQL</li>
+                    <li>Integrated Chart.js for data visualization components</li>
+                    <li>Project delivered on time meeting all client requirements</li>
+                </ul>
+            </div>
+        </div> -->
