@@ -32,14 +32,20 @@ window.addEventListener('scroll', () => {
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
+
+    const skills = document.getElementById('skills').classList.contains('active');
+    const experience = document.getElementById('experience').classList.contains('active');
     
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
+        if (skills) {
+            current = 'skills';
+        }
+
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
@@ -66,7 +72,19 @@ function switchTab(tabName, element) {
     let tabContent = document.getElementById(tabName + '-content');
     if (tabContent) {
         tabContent.classList.remove('d-none');
-        console.log(`Switched to ${tabName} tab`);
+        document.getElementById('skills-nav').classList.remove('active');
+        document.getElementById('experience-nav').classList.remove('active');
     }
+    if (tabName == 'skills') {
+        document.getElementById('skills-nav').classList.add('active');
+    }
+    if (tabName == 'experience') {
+        document.getElementById('experience-nav').classList.add('active');
+    }
+
     element.classList.add('active');
+    window.scrollTo({
+        top: document.getElementById('mixed').offsetTop - document.querySelector('.navbar').offsetHeight + 16,
+        behavior: 'smooth'
+    });
 }

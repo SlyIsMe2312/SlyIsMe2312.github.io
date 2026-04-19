@@ -28,9 +28,9 @@
         <div class="d-flex justify-content-lg-end align-items-center w-lg-50 w-100">
             <ul class="navbar-nav flex-row mt-2 mt-lg-0 me-auto me-lg-0">
                 <li class="nav-item me-3"><a class="nav-link px-0" href="#about">About</a></li>
-                <li class="nav-item me-3"><a class="nav-link px-0" href="#skills">Skills</a></li>
-                <li class="nav-item me-3"><a class="nav-link px-0" href="#experience">Experience</a></li>
-                <li class="nav-item"><a class="nav-link px-0" href="#projects">Projects</a></li>
+                <li class="nav-item me-3"><a id="skills-nav" class="nav-link px-0" href="#skills" onclick="switchTab('skills', document.getElementById('skills'))">Skills</a></li>
+                <li class="nav-item me-3"><a id="experience-nav" class="nav-link px-0" href="#experience" onclick="switchTab('experience', document.getElementById('experience'))">Experience</a></li>
+                <li class="nav-item me-3"><a class="nav-link px-0" href="#projects">Projects</a></li>
             </ul>
 
             <div class="d-none d-lg-flex align-items-center text-light ms-3">
@@ -42,8 +42,8 @@
     </div>
 </nav>
 
-<section id="about" class="about-section m-top">
-    <div class="container-fluid px-sm-2 px-5">
+<section id="about" class="about-section">
+    <div class="container-fluid">
         <div class="float-image">
             <img src="profile.jpg" 
                  alt="Profile Picture" 
@@ -104,57 +104,72 @@
 <hr style="border: 2px solid #333; border-radius: 5px; max-width: 816.9px; width: calc(100% - 32px); margin: auto;">
 
 <!-- Skills | Experience | Education Section -->
-<section class="py-5 bg-light">
+<section class="py-3 bg-light" id="mixed">
     <div class="container-fluid">
         
         <nav class="custom-tabs justify-content-between">
-            <div class="tab-link" onclick="switchTab('skills', this)">Skills</div>
-            <div class="tab-link active" onclick="switchTab('experience', this)">Experience</div>
+            <div id="skills" class="tab-link active" onclick="switchTab('skills', this)">Skills</div>
+            <div id="experience" class="tab-link" onclick="switchTab('experience', this)">Experience</div>
             <div class="tab-link" onclick="switchTab('education', this)">Education</div>
         </nav>
 
         <div id="tab-contents">
 
-            <div id="skills-content" class="tab-content">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h6 class="mb-3 text-muted fw-bold small text-uppercase">Programming</h6>
-                        <div class="mb-4">
-                            <span class="skill-badge"><i class="fab fa-js text-warning"></i> JavaScript</span>
-                            <span class="skill-badge"><i class="fab fa-php text-info"></i> PHP</span>
+           <div id="skills-content" class="tab-content">
+                <div class="row g-0"> <div class="col-md-4 pe-md-4">
+                        <h6 class="text-uppercase small fw-bold text-muted">Programming</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="skill-badge"><i class="fab fa-js text-warning"></i> JS</span>
                             <span class="skill-badge"><i class="fab fa-python text-primary"></i> Python</span>
+                            <span class="skill-badge"><i class="fab fa-php text-info"></i> PHP</span>
+                            <span class="skill-badge"><i class="fab fa-java text-danger"></i> Java</span>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h6 class="mb-3 text-muted fw-bold small text-uppercase">Tools & Databases</h6>
-                        <div class="mb-4">
-                            <span class="skill-badge"><i class="fas fa-database"></i> MySQL</span>
-                            <span class="skill-badge"><i class="fab fa-docker"></i> Docker</span>
+
+                    <div class="col-md-4 v-divider">
+                        <h6 class="text-uppercase small fw-bold text-muted">UI & Styling</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="skill-badge"><i class="fab fa-html5 text-danger"></i> HTML5</span>
+                            <span class="skill-badge"><i class="fab fa-css3-alt text-primary"></i> CSS3</span>
+                            <span class="skill-badge"><i class="fab fa-bootstrap text-purple"></i> Bootstrap</span>
+                            <span class="skill-badge"><i class="fab fa-css3-alt text-info"></i> Tailwind</span>
                         </div>
                     </div>
+
+                    <div class="col-md-4 v-divider">
+                        <h6 class="text-uppercase small fw-bold text-muted">Tools & DB</h6>
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="skill-badge"><i class="fab fa-git-alt text-danger"></i> Git</span>
+                            <span class="skill-badge"><i class="fas fa-database text-dark"></i> MySQL</span>
+                            <span class="skill-badge"><i class="fab fa-docker text-primary"></i> Docker</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div id="experience-content" class="tab-content">
+            <div id="experience-content" class="tab-content d-none">
                 <div class="d-flex gap-3 mb-4">
                     <div class="org-logo-container">
                         <i class="fas fa-laptop-code text-muted"></i>
                     </div>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold">Freelance Web Developer</h5>
-                            <span class="text-muted small">Jan 2026 — Present</span>
+                            <h5 class="mb-0 fw-bold">Freelance Commission - Domora Website</h5>
+                            <span class="text-muted small">December 28, 2025 - January 21, 2026</span>
                         </div>
-                        <p class="text-primary small mb-2">Self-Employed</p>
                         <ul class="small text-muted ps-3">
-                            <li>Developed front-end for Domora Website using Bootstrap and JS.</li>
-                            <li>Implemented back-end functionality using PHP and MySQL.</li>
+                            <li>Collaborated with 1 other developer to build a fully functional website</li>
+                            <li>Successfully delivered all project requirements within an accelerated 3-week timeframe, maintaining high quality under strict deadlines</li>
+                            <li>Developed front-end using Bootstrap and JS with client's initial mock-up design</li>
+                            <li>Implemented back-end functionality using PHP and MySQL</li>
+                            <li>Integrated Chart.js for data visualization components</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div id="education-content" class="tab-content">
+            <div id="education-content" class="tab-content d-none">
                 <div class="d-flex gap-3 mb-4">
                     <div class="org-logo-container">
                         <img src="path_to_mapua_logo.png" alt="Mapua">
@@ -162,9 +177,9 @@
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between">
                             <h5 class="mb-0 fw-bold">Mapua University Makati</h5>
-                            <span class="text-muted small">Expected 2026</span>
+                            <span class="text-muted small">2021 - Present</span>
                         </div>
-                        <p class="text-muted small">BS Computer Science (App Development)</p>
+                        <p class="text-muted small">BS Computer Science Specializing in Application Development</p>
                     </div>
                 </div>
                 <div class="d-flex gap-3">
@@ -187,7 +202,7 @@
 
 <hr style="border: 2px solid #333; border-radius: 5px; max-width: 816.9px; width: calc(100% - 32px); margin: auto;">
 
-<section id="projects" class="py-5 bg-light">
+<section id="projects" class="py-3 bg-light margin-end">
     <div class="container-fluid">
         <h2 class="section-title">Featured Projects</h2>
         
