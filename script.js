@@ -9,14 +9,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(targetId);
         
         if (target) {
-            // Get navbar height (adjust based on your navbar)
             const navbar = document.querySelector('.navbar');
             const navbarHeight = navbar ? navbar.offsetHeight : 70;
             
-            // Calculate position with offset
             const targetPosition = target.offsetTop - navbarHeight;
             
-            // Smooth scroll to adjusted position
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -42,10 +39,12 @@ window.addEventListener('scroll', () => {
     
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
-        if (skills) {
+        if (skills && current === 'mixed') {
             current = 'skills';
         }
-
+        if (experience && current === 'mixed') {
+            current = 'experience';
+        }
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
@@ -87,4 +86,73 @@ function switchTab(tabName, element) {
         top: document.getElementById('mixed').offsetTop - document.querySelector('.navbar').offsetHeight + 16,
         behavior: 'smooth'
     });
+}
+
+
+const projectData = {
+    domora: {
+        title: "Domora Website",
+        images: ['domora-main.png', 'domora-charts.png', 'domora-mobile.png'],
+        desc: "Full-stack website with MySQL integration and Chart.js analytics."
+    },
+    taskflow: {
+        title: "TaskFlow AI",
+        images: ['profile.jpg', 'profile2.jpg', 'taskflow-pdf.png', 'profile3.jpg', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png'],
+        desc: "AI-driven task management system with PDF summary generation."
+    }
+};
+
+let currentProject = null;
+let currentIndex = 0;
+let thumbnailsBuilt = false;
+
+function openGallery(key) {
+    currentProject = projectData[key];
+    currentIndex = 0;
+    thumbnailsBuilt = false;
+    
+    document.getElementById('galleryModal').classList.remove('hidden');
+    updateModalView();
+}
+
+function updateModalView() {
+    const mainImg = document.getElementById('currentMainImg');
+    const thumbStrip = document.getElementById('thumbStrip');
+    
+    mainImg.src = currentProject.images[currentIndex];
+    
+    // Build thumbnails only once
+    if (!thumbnailsBuilt) {
+        thumbStrip.innerHTML = '';
+        currentProject.images.forEach((img, index) => {
+            const t = document.createElement('img');
+            t.src = img;
+            t.className = 'thumb';
+            t.onclick = () => { currentIndex = index; updateModalView(); };
+            thumbStrip.appendChild(t);
+        });
+        thumbnailsBuilt = true;
+    }
+    
+    // Update active class and scroll position
+    const thumbs = thumbStrip.querySelectorAll('.thumb');
+    thumbs.forEach((thumb, index) => {
+        if (index === currentIndex) {
+            thumb.classList.add('active');
+            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
+}
+
+function closeModal() {
+    document.getElementById('galleryModal').classList.add('hidden');
+}
+
+function changeSlide(dir) {
+    currentIndex += dir;
+    if (currentIndex < 0) currentIndex = currentProject.images.length - 1;
+    if (currentIndex >= currentProject.images.length) currentIndex = 0;
+    updateModalView();
 }

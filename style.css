@@ -129,8 +129,6 @@ p {
 }
 
 .skill-badge:hover {
-    background: #c3bfbf;
-    color: white;
     cursor: default;
 }
 
@@ -138,11 +136,13 @@ p {
     transition: all 0.3s ease;
     border: none;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border: 1px solid #000000 !important;
 }
 
 .contact {
@@ -199,7 +199,7 @@ p {
 footer {
     background: #2c3e50;
     color: white;
-    padding: 30px 0;
+    padding: 12px 0
 }
 
 .social-links a {
@@ -347,7 +347,7 @@ footer {
 /* Hide tooltip automatically after 1 second */
 .about-links a:not(:hover)::after,
 .about-links a:not(:hover)::before {
-    transition-delay: 0.8s; 
+    transition-delay: 0.35s; 
 }
 
 .copy-btn {
@@ -419,6 +419,10 @@ footer {
     flex-shrink: 0;
 }
 
+.org-logo-container-sti {
+    background-color: #FFF200 !important;
+}
+
 .org-logo-container img {
     width: 80%;
     height: auto;
@@ -428,4 +432,219 @@ footer {
 /* --- Visibility Utility --- */
 .hidden {
     display: none !important;
+}
+
+/* Ensures cards in the same row stay the same height even with different image ratios */
+.object-fit-cover {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.0); /* Light mode glass effect */
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+    background-color: #ebebeb;
+    border-radius: 12px;
+    margin: 0 auto; /* Center it */
+}
+
+.main-view {
+    width: calc(100% - 16px);
+    height: auto;
+    min-height: 65vh;
+    max-height: 65vh; /* Use viewport height instead of fixed */
+    margin: 8px;
+    background: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: auto; /* Prevent overflow */
+}
+
+
+
+.main-view img {
+    max-width: calc(100% - 16px);
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.main-view {
+    overflow: auto;
+    cursor: zoom-in;
+}
+
+.main-view.zoomed {
+    cursor: zoom-out;
+}
+
+.main-view.zoomed img {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-strip {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin: 0px 8px 8px 8px;
+    border-radius: 8px;
+    background: #f8f8f8;
+    overflow-y: hidden;
+    scrollbar-width: thin; /* For Firefox - makes scrollbar visible */
+}
+
+.thumbnail-strip::-webkit-scrollbar {
+    height: 8px;
+    display: block !important; /* Force show */
+}
+
+.thumbnail-strip::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.thumbnail-strip::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.thumb {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    border-radius: 4px;
+    border: 2px solid transparent;
+}
+
+.thumbnail-item:first-child {
+    margin-left: 4px;
+}
+
+.thumbnail-item:last-child {
+    margin-right: 4px;
+}
+
+.thumb.active {
+    opacity: 1;
+    border-color: #007bff;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 2px 9px;
+    z-index: 10;
+    border: thin solid #333;
+}
+
+.close-modal-mobile {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 2px 9px;
+    z-index: 10;
+    border: thin solid #333;
+}
+
+@media (max-width: 1000px) {
+    .close-modal {
+        display: none;
+    }
+    .close-modal-mobile {
+        display: block;
+    }
+}
+
+@media (min-width: 1001px) {
+    .close-modal {
+        display: block;
+    }
+    .close-modal-mobile {
+        display: none;
+    }
+}
+
+.hidden { display: none !important; }
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100; /* Higher z-index to stay above image */
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Previous button - left side */
+.nav-btn.prev {
+    left: 20px;
+}
+
+/* Next button - right side */
+.nav-btn.next {
+    right: 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+    
+    .nav-btn.prev {
+        left: 3px;
+    }
+    
+    .nav-btn.next {
+        right: 3px;
+    }
 }
