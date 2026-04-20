@@ -53,9 +53,9 @@ window.addEventListener('scroll', () => {
 
 function copyEmail(email) {
     navigator.clipboard.writeText(email).then(() => {
-        alert(`Copied: ${email}`);
+        console.log('Email copied to clipboard');
     }).catch(() => {
-        alert('Failed to copy email');
+        console.error('Failed to copy email');
     });
 }
 
@@ -92,12 +92,12 @@ function switchTab(tabName, element) {
 const projectData = {
     domora: {
         title: "Domora Website",
-        images: ['domora-main.png', 'domora-charts.png', 'domora-mobile.png'],
+        images: ['assets/domora/1.png', 'assets/domora/2.png',  'assets/domora/3.png',  'assets/domora/4.png',  'assets/domora/5.png',  'assets/domora/6.png',  'assets/domora/7.png',  'assets/domora/8.png',  'assets/domora/9.png',  'assets/domora/10.png',  'assets/domora/11.png',  'assets/domora/12.png',  'assets/domora/13.png',  'assets/domora/14.png',  'assets/domora/15.png',  'assets/domora/16.png',  'assets/domora/17.png'],
         desc: "Full-stack website with MySQL integration and Chart.js analytics."
     },
     taskflow: {
         title: "TaskFlow AI",
-        images: ['profile.jpg', 'profile2.jpg', 'taskflow-pdf.png', 'profile3.jpg', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png', 'a.png', 'b.png'],
+        images: ['assets/taskflow/1.png', 'assets/taskflow/2.png', 'assets/taskflow/3.png', 'assets/taskflow/4.png', 'assets/taskflow/5.png', 'assets/taskflow/6.png', 'assets/taskflow/7.png', 'assets/taskflow/8.png', 'assets/taskflow/9.png', 'assets/taskflow/10.png',  'assets/taskflow/11.png',  'assets/taskflow/12.png',  'assets/taskflow/13.png',  'assets/taskflow/14.png',  'assets/taskflow/15.png'],
         desc: "AI-driven task management system with PDF summary generation."
     }
 };

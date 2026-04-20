@@ -46,6 +46,7 @@
     <div class="container-fluid">
         <div class="float-image">
             <img src="profile.jpg" 
+            <img src="assets/profile.jpg" 
                  alt="Profile Picture" 
                  class="img-fluid shadow rounded">
         </div>
@@ -68,13 +69,13 @@
                 <span class="tooltip-text"></span>
             </div>
             <div class="link-wrapper">
-                <a class="link" href="#" target="_blank" data-tooltip="Connect to my LinkedIn">
+                <a class="link" href="https://www.linkedin.com/in/john-patrick-palanas/" target="_blank" data-tooltip="Connect to my LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <span class="tooltip-text"></span>
             </div>
             <div class="link-wrapper email-container">
-                <a class="link email-link" href="#" data-bs-toggle="collapse" data-bs-target="#emailCollapse" aria-expanded="false" aria-controls="emailCollapse" data-tooltip="Send me an email">
+                <a class="link email-link" href="#a" data-bs-toggle="collapse" data-bs-target="#emailCollapse" aria-expanded="false" aria-controls="emailCollapse" data-tooltip="Send me an email">
                     <i class="bi bi-envelope-at-fill"></i>
                 </a>
                 <span class="tooltip-text"></span>
@@ -172,7 +173,7 @@
             <div id="education-content" class="tab-content d-none">
                 <div class="d-flex gap-3 mb-4">
                     <div class="org-logo-container">
-                        <img src="mapua.png" alt="Mapua">
+                        <img src="assets/mapua.png" alt="Mapua">
                     </div>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between">
@@ -184,7 +185,7 @@
                 </div>
                 <div class="d-flex gap-3">
                     <div class="org-logo-container org-logo-container-sti">
-                        <img src="sti.png" alt="STI">
+                        <img src="assets/sti.png" alt="STI">
                     </div>
                     <div class="flex-grow-1">
                         <div class="d-flex justify-content-between">
@@ -206,14 +207,13 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="section-title mb-0">Featured Projects</h2>
-            <a href="https://github.com/slyisme2312" target="_blank" class="text-decoration-none small text-muted">View more <i class="fas fa-arrow-right ms-1"></i></a>
         </div>
         
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="card project-card h-100 border-0 shadow-sm clickable" onclick="openGallery('domora')">
                     <div class="ratio ratio-16x9 overflow-hidden bg-light">
-                        <img src="domora-thumbnail.png" class="card-img-top object-fit-cover" alt="Domora Dashboard">
+                        <img src="assets/domora/1.png" class="card-img-top object-fit-cover" alt="Domora Website">
                     </div>
                     <div class="card-body px-4 py-4 d-flex flex-column">
                         <h5 class="fw-bold">Domora Website</h5>
@@ -222,9 +222,9 @@
                         </p>
                         <div class="mb-3">
                             <span class="badge border text-dark fw-normal p-2">PHP</span>
+                            <span class="badge border text-dark fw-normal p-2">JavaScript</span>
                             <span class="badge border text-dark fw-normal p-2">MySQL</span>
                             <span class="badge border text-dark fw-normal p-2">Chart.js</span>
-                            <span class="badge border text-dark fw-normal p-2">JavaScript</span>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
             <div class="col-md-6">
                 <div class="card project-card h-100 border-0 shadow-sm clickable" onclick="openGallery('taskflow')">
                     <div class="ratio ratio-16x9 overflow-hidden bg-light">
-                        <img src="taskflow-thumbnail.png" class="card-img-top object-fit-cover" alt="TaskFlow Website">
+                        <img src="assets/taskflow/1.png" class="card-img-top object-fit-cover" alt="TaskFlow Website">
                     </div>
                     <div class="card-body px-4 py-4 d-flex flex-column">
                         <h5 class="fw-bold">TaskFlow</h5>
@@ -241,10 +241,10 @@
                             Built for Software Engineering I & II, this application leverages AI to automatically generate actionable subtasks from user input upon user confirmation. Includes a custom task summary engine with Print-to-PDF capabilities.
                         </p>
                         <div class="mb-3">
-                            <span class="badge border text-dark fw-normal p-2">AI Integration</span>
                             <span class="badge border text-dark fw-normal p-2">PHP</span>
                             <span class="badge border text-dark fw-normal p-2">JavaScript</span>
                             <span class="badge border text-dark fw-normal p-2">MySQL</span>
+                            <span class="badge border text-dark fw-normal p-2">AI Integration</span>
                         </div>
                     </div>
                 </div>
@@ -274,7 +274,7 @@
     <div class="container-fluid text-center">
         <div class="social-links mb-3">
             <a href="https://github.com/slyisme2312" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/john-patrick-palanas/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:johnpatrickpalanas@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
         </div>
         <p>&copy; 2026 John Patrick C. Palanas.</p>
