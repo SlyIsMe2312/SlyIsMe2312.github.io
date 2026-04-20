@@ -92,7 +92,8 @@ function switchTab(tabName, element) {
 const projectData = {
     domora: {
         title: "Domora Website",
-        images: ['assets/domora/1.png', 'assets/domora/2.png',  'assets/domora/3.png',  'assets/domora/4.png',  'assets/domora/5.png',  'assets/domora/6.png',  'assets/domora/7.png',  'assets/domora/8.png',  'assets/domora/9.png',  'assets/domora/10.png',  'assets/domora/11.png',  'assets/domora/12.png',  'assets/domora/13.png',  'assets/domora/14.png',  'assets/domora/15.png',  'assets/domora/16.png',  'assets/domora/17.png'],
+        images: ['assets/domora/1.png', 'assets/domora/2.png',  'assets/domora/3.png',  'assets/domora/4.png',  'assets/domora/5.png',  'assets/domora/6.png',  'assets/domora/7.png',  'assets/domora/8.png',  'assets/domora/9.png',  'assets/domora/10.png',  'assets/domora/11.png',  'assets/domora/12.png',
+              'assets/domora/13.png',  'assets/domora/14.png',  'assets/domora/15.png',  'assets/domora/16.png',  'assets/domora/17.png',  'assets/domora/18.png',  'assets/domora/19.png',  'assets/domora/20.png',  'assets/domora/21.png',  'assets/domora/22.png',  'assets/domora/23.png'],
         desc: "Full-stack website with MySQL integration and Chart.js analytics."
     },
     taskflow: {
